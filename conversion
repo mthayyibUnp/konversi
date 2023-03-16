@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konversi Nilai Angka ke Huruf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        #hasilKonversi {
+            display: block;
+            margin: 20px auto;
+            padding: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script language="javascript">
+        function konversi() {
+            var nilai = parseInt(prompt("Masukkan nilai angka:"));
+            var hasil = "";
+            if (nilai >= 0 && nilai <= 39) {
+                hasil = "E";
+            } else if (nilai >= 40 && nilai <= 49) {
+                hasil = "D";
+            } else if (nilai >= 50 && nilai <= 54) {
+                hasil = "C-";
+            } else if (nilai >= 55 && nilai <= 59) {
+                hasil = "C";
+            } else if (nilai >= 60 && nilai <= 64) {
+                hasil = "C+";
+            } else if (nilai >= 65 && nilai <= 69) {
+                hasil = "B-";
+            } else if (nilai >= 70 && nilai <= 74) {
+                hasil = "B";
+            } else if (nilai >= 75 && nilai <= 79) {
+                hasil = "B+";
+            } else if (nilai >= 80 && nilai <= 84) {
+                hasil = "A-";
+            } else if (nilai >= 85 && nilai <= 100) {
+                hasil = "A";
+            } else {
+                hasil = "Nilai tidak valid";
+            }
+
+            var hasilKonversiElement = document.getElementById("hasilKonversi");
+            hasilKonversiElement.innerHTML = "Nilai: " + hasil;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Konversi Nilai Angka ke Huruf</h1>
+    <button onclick="konversi()">Konversi Nilai</button>
+    <span id="hasilKonversi"></span>
+</body>
+</html>
